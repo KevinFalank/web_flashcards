@@ -2,6 +2,8 @@
 
 #Git workflow
 
+To understand git on a conceptual level, visit this [git visual demo](http://pcottle.github.io/learnGitBranching/), the most epic git tutorial on the web. 
+
 ###Set up github repository
 
     Set up git repository and add everyone as collaborators. 
@@ -57,37 +59,58 @@ After you have done a command with -u, when you are on this branch, you can just
 
   1.To create a pull request, go to the github website. 
   2. Click on a branch. 
-
   3. A button will appear saying "compare and pull request". Click it. 
-  ![](README_pictures/compare_and_pull.png)
+  4. You will see a new screen asking you to write a pull request message. Github is smart, so it will look at your latest commit message.  The title of the pull request will be the first 80 characters of your commit message. The body of the pull request will be the rest of the commit message. If you wrote a good commit message, you can just press send pull request.
+  5. The pull request is created. 
 
-  4. You will see a new screen asking you to write a pull request message. 
-
-  ![](README_pictures/pull_request_message.png)
- 
-  Github is smart, so it will look at your latest commit message.  The title of the pull request will be the first 80 characters of your commit message. The body of the pull request will be the rest of the commit message. If you wrote a good commit message, you can just press send pull request.
-
-  ![](README_pictures/send_pull_request.png)
-
-  5. The pull request is created. Someone can now review your code.
-
-  6. Now pretend you are a code reviewer looking at a pull request. If there are no merge conflicts, you can press the merge pull request button.
-  
-  ![](README_pictures/merge_branch.png)
-
-  Once the branch is merged, there is generally no point in keeping around the old branch. If you do, it clutters up your local repository. So you can delete it to keep things nice and clean. 
-
-  ![](README_pictures/delete_branch.png)
-
-  If everyone works in their own file on the project, there will be no merge conflics. For right now, we will all work on our own files to avoid having to follow the merge conflict instructions below.
-
-
+  If there are no merge conflict, you can press the merge pull request button.  If everyone works in their own file on the project, there will be no merge conflics. For right now, we will all work on our own files. 
   
   If there are merge conflicts, follow the instructions below.
 
-## Handling a pull request with merge conflicts. 
-  1. To be written
+## Handling a merge conflict.  
+  
+  Before you push changes to the remote repository in the cloud, you will want to check and see if there are any big differences between what you have and what the remote repository has. Commit all of your changest to your local repository.  Then pull in Run 
+  
+     git pull
+
+So, what do you do if you see the following? 
+    
+     Taras-MacBook-Air:web_flashcards tlroys$ git pull
+     Auto-merging README.md
+     CONFLICT (content): Merge conflict in README.md
+     Automatic merge failed; fix conflicts and then commit the result.
 
 
+This means that when I tried to stick all of the shiny new stuff from the cloud into my repository, somewhere someone wrote two things on the same line. Specifically, in the README, there are two different things that are trying to occupy the same place.  When two things try to occupy the same space, Git freaks out and tells us humans to deal with it. It presents us with the two things.  
 
-## 
+    <<<<<<< HEAD
+    ## Handling a pull request with merge conflicts. 
+     
+       So.  It happened.  Two people edited the same file and tried to merge it. Oh no!  What do you do
+     
+     =======
+     ## Handling a pull request with merge conflicts.
+    >>>>>>> d30ad19a99b65a94708662a971f467fc434faa19
+
+Everything above the row of equals signs is one thing.  Everything below is the other thing.  Your mission, should you choose to accept it, is to choose what you actually want in that space. 
+
+As it happens, I want the top bit. 
+
+    ## Handling a pull request with merge conflicts. 
+     
+       So.  It happened.  Two people edited the same file and tried to merge it. Oh no!
+
+After you decide what you want to keep, you delete everything else.
+    
+
+### Pulling one branch into another. 
+
+to merge one branch into anohter, 
+
+let's say you are on the branch TLR/stuff
+
+To merge everythig in master into TLR/stuff, use the command 
+
+     git merge master
+     
+This grabs everything from master and sticks it into TLR/stuff.  If there are merge conflicts, resolve them using the merge conflict procedure. 
