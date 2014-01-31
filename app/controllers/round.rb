@@ -1,3 +1,7 @@
+get '/round' do
+end
+
+
 get '/round/question/' do
   #max_guess is stored in cookie.
   #@card = Card.random based on current deck. Current deck is stored in cookie.
