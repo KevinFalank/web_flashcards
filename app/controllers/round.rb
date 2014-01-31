@@ -15,6 +15,11 @@ get '/round/question/' do
   #Round_id is also stored in cookie, because it would be weird to expose via URL.
   #current_card_id is also stored in cookie so we know what answer to look up.
   #'submit guess' sends POST to /round/answer/ with your guess
+  @user = User.find(session[:user_id])
+  @deck = Deck.find(session[:deck_id])
+  @card = get_next_random_card
+  session[:card_id] = @card.id
+  erb :question
 end
 
 post '/round/answer/' do
