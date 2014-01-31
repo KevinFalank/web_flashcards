@@ -11,8 +11,11 @@ post '/login' do
 end
 
 get '/users/:user_id' do
-#This is the 'profile' page. Displays history of rounds played.
+  #This is the 'profile' page. Displays history of rounds played.
+  @profile_data = User.get_rounds_by_user(current_user.id)
+  erb :profile
 end
+
 
 
 post '/users/create' do
