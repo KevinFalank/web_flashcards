@@ -40,7 +40,7 @@ get '/round/display_answer' do
   @user = @guess.user
   @deck = @card.deck
 
-  @round_over = ()
+  @round_over = round_over?
 
   erb :display_answer
 end
