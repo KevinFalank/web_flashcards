@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FlashChards</title>
     <meta name="description" content="Completed as a group project for the 2014 Squirrel Cohort at Dev Bootcamp Chicago."/>
-    <meta name="author" content="Lydia Koller, Kevin Falank, Cristin O'Connor, Ben Neuman, Brian Murphy" />
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <meta name="author" content="Tara Roys, Lydia Koller, Kevin Falank, Cristin O'Connor, Ben Neuman, Brian Murphy" />
+    <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="/css/application.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -18,7 +18,8 @@
     <![endif]-->
   </head>
   <body>
-    <header>
+    <div class="container-fluid">
+    <header class="row">
       <h1><a href="/">FlashChards</a></h1>
     </header>
     <nav>
@@ -26,12 +27,19 @@
         <li><a href="/">Home</a></li>
       </ul>
     </nav>
-    <div class="fluid-container">
-      <%= yield %>
-    </div>
-    <footer class="footer">
     
+      <%= yield %>
+
+    <footer class="footer row">
+      <div class="col-xs-12 col-sm-6 col-md-8">
+        <span class="copyright">Copyright &copy;2014. All Rights Reserved.</span>
+        <span class="authors">Ben Neuman, Brian Murphy, Lydia Koller, Kevin Falank, Tara Roys, Cristin O'Connor</span>
+      </div>
+      <div class="col-xs-6 col-md-4">
+        <img src="http://scm-l3.technorati.com/12/12/13/73853/devbootcamp.png?t=20121213131231" class="logo" alt="Dev Bootcamp" title="Dev Bootcamp">
+      </div>
     </footer>
+  </div><!--.container-fluid-->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
