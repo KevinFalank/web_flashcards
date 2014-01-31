@@ -57,15 +57,32 @@ After you have done a command with -u, when you are on this branch, you can just
 
 ### Create a pull request to merge two branches together.  
 
-  1.To create a pull request, go to the github website. 
-  2. Click on a branch. 
-  3. A button will appear saying "compare and pull request". Click it. 
-  4. You will see a new screen asking you to write a pull request message. Github is smart, so it will look at your latest commit message.  The title of the pull request will be the first 80 characters of your commit message. The body of the pull request will be the rest of the commit message. If you wrote a good commit message, you can just press send pull request.
-  5. The pull request is created. 
+  1.To create a pull request, go to the github website.
+  2. Click on a branch.
 
-  If there are no merge conflict, you can press the merge pull request button.  If everyone works in their own file on the project, there will be no merge conflics. For right now, we will all work on our own files. 
-  
-  If there are merge conflicts, follow the instructions below.
+  3. A button will appear saying "compare and pull request". Click it.
+  ![](README_pictures/compare_and_pull.png)
+
+  4. You will see a new screen asking you to write a pull request message.
+
+  ![](README_pictures/pull_request_message.png)
+
+  Github is smart, so it will look at your latest commit message.  The title of the pull request will be the first 80 characters of your commit message. The body of the pull request will be the rest of the commit message. If you wrote a good commit message, you can just press send pull request.
+
+  ![](README_pictures/send_pull_request.png)
+
+  5. The pull request is created. Someone can now review your code.
+
+  6. Now pretend you are a code reviewer looking at a pull request. If there are no merge conflicts, you can press the merge pull request button.
+
+  ![](README_pictures/merge_branch.png)
+
+  Once the branch is merged, there is generally no point in keeping around the old branch. If you do, it clutters up your local repository. So you can delete it to keep things nice and clean.
+
+  ![](README_pictures/delete_branch.png)
+
+  If everyone works in their own file on the project, there will be no merge conflics. For right now, we will all work on our own files to avoid having to follow the merge conflict instructions below.
+
 
 ## Handling a merge conflict.  
   
