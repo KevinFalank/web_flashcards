@@ -4,6 +4,8 @@
 
 To understand git on a conceptual level, visit this [git visual demo](http://pcottle.github.io/learnGitBranching/), the most epic git tutorial on the web. 
 
+We are chosing to work with a branching workflow. Every pair works in their own branch, and when we have our branch working to our satisfaction, we merge it into the master branch.
+
 ###Set up github repository
 
     Set up git repository and add everyone as collaborators. 
