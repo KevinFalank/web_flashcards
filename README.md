@@ -19,17 +19,17 @@ Git workflow
 
   _To create a new branch on the local machine, git checkout -b.  This creates a new branch. The branch should be named with your first three initials and the feature you are working on._ 
 
-  git checkout -b TLR/awesome-git-workflow-readme
+  git checkout -b TLR/Add-git-workflow-to-readme
   commit workflow
 
   _To make the branch appear on github, use git push -u origin.  Instead of pushing to master, in the place where you would usually type master, type the name of your branch. This will create a new branch on the remote repository called TLR/awesome-git-workflow-readme._
 
-  git push -u origin TLR/awesome-git-workflow-readme 
+  git push -u origin TLR/Add-git-workflow-to-readme:TLR/add-git-workflow-to-readme
 
 ## Create a pull request to merge two branches together.  
 
   1.To create a pull request, go to the github website. 
   2. Click on a branch. 
-  3. 
+  3
 
 ## 
