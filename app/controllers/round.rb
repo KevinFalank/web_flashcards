@@ -1,6 +1,6 @@
 get '/round' do
   session[:deck_id] = params[:deck_id]
-  session[:max_guess] = 5
+  session[:max_guess] = 10
   session[:guess_count] = 0
   session[:user_id] = 1 #temp
   session[:round_id] = Round.create(user_id: session[:user_id], deck_id: session[:deck_id]).id
