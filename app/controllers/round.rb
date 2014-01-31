@@ -4,11 +4,11 @@ get '/round' do
   session[:guess_count] = 0
   session[:user_id] = 1 #temp
   session[:round_id] = Round.create(user_id: session[:user_id], deck_id: session[:deck_id]).id
-  redirect '/round/question/'
+  redirect '/round/question'
 end
 
 
-get '/round/question/' do
+get '/round/question' do
   #max_guess is stored in cookie.
   #@card = Card.random based on current deck. Current deck is stored in cookie.
   #We also check guesses to make sure we don't repeat cards you have answere correctly.
@@ -22,13 +22,13 @@ get '/round/question/' do
   erb :question
 end
 
-post '/round/answer/' do
+post '/round/answer' do
   #Post logs your guess and its correctness.
   #It then redirects to /round/display_answer/ with the guess_id stored in query string.
 
 end
 
-get '/round/display_answer/' do
+get '/round/display_answer' do
   #Retrives your guess based on guess_id in query string.
   #Displays your guess, the answer, and correctness.
   #Check number of guesses made vs. max_guesses in round.
