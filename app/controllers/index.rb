@@ -3,11 +3,6 @@ get '/' do
   erb :index
 end
 
-post '/login/' do
-#Validates username/password. Redirects to /decks if successful.
-  redirect to '/decks/'
-end
-
 get '/decks/' do
 #This page displays list of decks you can choose from.
 end
