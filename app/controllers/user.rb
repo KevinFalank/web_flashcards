@@ -23,6 +23,10 @@ post '/users/create' do
   #Generates user from form input.
   #Sets user as logged in.
   #Redirects to 'select deck' /decks
+  new_user = params[:new_user]
+  user = User.create(user_name: new_user[:user_name], password: new_user[:password], email: new_user[:email], name: new_user[:name])
+  session[:user_id] = user.id
+  redirect to '/decks/'
 end
 
 get '/users/create' do
