@@ -18,6 +18,11 @@ post '/users/create' do
   #Redirects to 'select deck' /decks
 end
 
+get '/users/create' do
+  #Generates user form for new user.
+  erb :create_user
+end
+
 get '/users/logout/' do
   #Logs user out.
   #Redirects to 'login' /
