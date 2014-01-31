@@ -1,10 +1,11 @@
-  <form method="post" action="/decks" class="login" role="form">
-    <fieldset class="input-fields">
-      <label for="username">Username: <input type="text" name="login[:user_name]" id="username" class="form-control"></label>
-      <label for="password">Password: <input type="password" name="login[:password]" id="password" class="form-control"></label>
-    </fieldset>
-    <fieldset class="submit-buttons">
-      <label for="submit"><input type="button" name="submit" id="submit" class="btn btn-primary" value="Login"/></label>
-      <a href="/users/create" class="btn btn-primary">Create Account</a>
-    </fieldset>
-  </form>
+<form method="post" action="/login" class="login" role="form">
+   <fieldset class="input-fields">
+     <label for="username">Username: <input type="text" name="login[user_name]" id="username" class="form-control"></label>
+     <label for="password">Password: <input type="password" name="login[password]" id="password" class="form-control"></label>
+   </fieldset>
+   <fieldset class="submit-buttons">
+     <label for="submit"><input type="submit" name="submit" id="submit" class="btn btn-primary" value="Login"/></label>
+     <a href="/users/create" class="btn btn-primary">Create Account</a>
+   </fieldset>
+</form>
+
