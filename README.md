@@ -1,5 +1,7 @@
 #Web Flashcards
 
+MAOR DELIBERATE MERGE CONFLICTS MUAHAHA
+
 #Git workflow
 
 ###Set up github repository
@@ -86,6 +88,9 @@ After you have done a command with -u, when you are on this branch, you can just
   If there are merge conflicts, follow the instructions below.
 
 ## Handling a pull request with merge conflicts. 
+  
+  So.  It happened.  Two people edited the same file and tried to merge it. Oh no!  What do you do
+
   1. To be written
 
 
