@@ -1,14 +1,14 @@
 get '/round' do
   session[:deck_id] = params[:deck_id]
-  session[:max_guess] = 5
+  session[:max_guess] = 10
   session[:guess_count] = 0
   session[:user_id] = 1 #temp
   session[:round_id] = Round.create(user_id: session[:user_id], deck_id: session[:deck_id]).id
-  redirect '/round/question/'
+  redirect '/round/question'
 end
 
 
-get '/round/question/' do
+get '/round/question' do
   #max_guess is stored in cookie.
   #@card = Card.random based on current deck. Current deck is stored in cookie.
   #We also check guesses to make sure we don't repeat cards you have answere correctly.
@@ -22,16 +22,28 @@ get '/round/question/' do
   erb :question
 end
 
-post '/round/answer/' do
-  #Post logs your guess and its correctness.
-  #It then redirects to /round/display_answer/ with the guess_id stored in query string.
-
+post '/round/answer' do
+  user_guess = params[:guess]
+  card = Card.find(session[:card_id])
+  correctness = check_guess(user_guess, card.answer)
+  guess = Guess.create(card: card,
+               round_id: session[:round_id],
+               correctness: correctness)
+  session[:guess_count] += 1
+  redirect "/round/display_answer?guess_id=#{guess.id}&guess=#{user_guess}"
 end
 
-get '/round/display_answer/' do
-  #Retrives your guess based on guess_id in query string.
-  #Displays your guess, the answer, and correctness.
-  #Check number of guesses made vs. max_guesses in round.
-    #If done, render with 'done' link.
-    #Else, render with 'next question' link.
+get '/round/display_answer' do
+  @guess = Guess.find(params[:guess_id])
+  @user_guess = params[:guess]
+  @card = @guess.card
+  @user = @guess.round.user
+  @deck = @card.deck
+
+  @round_over = round_over?
+  if @round_over
+    session[:guess_count] = 0
+  end
+
+  erb :display_answer
 end
