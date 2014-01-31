@@ -1,13 +1,15 @@
 #Web Flashcards
 
-Git workflow
+
+
+#Git workflow
 
 ##Set up github repository
 [X]Set up git repository and add everyone as collaborators. 
 
 ##Clone Repository onto everyone's local machine
 
-[ ] git clone https://github.com/KevinFalank/web_flashcards.git web_flashacards
+[] git clone https://github.com/KevinFalank/web_flashcards.git web_flashacards
 
 
 ## Commit 
@@ -35,7 +37,7 @@ Git workflow
   4. You will see a new screen asking you to write a pull request message. Github is smart, so it will look at your latest commit message.  The title of the pull request will be the first 80 characters of your commit message. The body of the pull request will be the rest of the commit message. If you wrote a good commit message, you can just press send pull request.
   5. The pull request is created. 
 
-  If there are no merge conflict, you can press the merge pull request button. If there are merge conflicts, 
+  If there are no merge conflict, you can press the merge pull request button. If there are merge conflicts, follow the instructions below.
 
 ## Handling a pull request with merge conflicts. 
   1. To be written
