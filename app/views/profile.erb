@@ -1,4 +1,19 @@
-<div class = 'container'>
-
-
-</div>
+<h1><%=@profile_data[0][:name]%></h1>
+<table>
+  <th>
+    <td>Round</td>
+    <td>Deck</td>
+    <td>Total Guesses</td>
+    <td>Correct Guesses</td>
+    <td>Percent Correct</td>
+  </th>
+  <%@profile_data.each do |round|%>
+  <tr>
+    <td><%=round[:round]%></td>
+     <td><%=round[:deck]%></td>
+     <td><%=round[:total_guesses]%></td>
+     <td><%=round[:correct_guesses]%></td>
+     <td><%=round[:percentage_correct]%></td>
+  </tr>
+  <%end%>
+</table>
