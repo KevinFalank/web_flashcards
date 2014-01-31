@@ -12,14 +12,14 @@ Git workflow
 
 ## Commit 
 
-   ````git add 
-   ````git commit -v 
+   git add 
+   git commit -v 
 
 ## Create a new branch for new features
 
   _To create a new branch on the local machine, git checkout -b.  This creates a new branch. The branch should be named with your first three initials and the feature you are working on._ 
 
-  ```` git checkout -b TLR/Add-git-workflow-to-readme
+  git checkout -b TLR/Add-git-workflow-to-readme
   
   commit workflow
 
@@ -40,6 +40,6 @@ Git workflow
 ## Handling a pull request with merge conflicts. 
   1. To be written
 
-  
+
 
 ## 
