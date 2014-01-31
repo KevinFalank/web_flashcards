@@ -1,0 +1,20 @@
+<h2><%= @user.name %></h2>
+<h2><%= @deck.name %></h2>
+
+<p>The question was: <%= @card.question %></p>
+<p>Your guess was: <%= @user_guess %> </p>
+<p>The answer is: <%= @card.answer %> </p>
+<p>Your guess was:
+    <% if @guess.correctness == 1 %>
+      RIGHT
+    <% else %>
+      WRONG
+    <% end %>
+</p>
+
+<p>
+<% if @round_over %>
+  <a href='<%="users/#{@user.id}"%>'>Go to your results</a>
+<% else %>
+  <a href="/round/question">Next question</a>
+<% end %>

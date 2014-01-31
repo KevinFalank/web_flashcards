@@ -35,12 +35,15 @@ end
 
 get '/round/display_answer' do
   @guess = Guess.find(params[:guess_id])
-  @user_guess = params[:user_guess]
+  @user_guess = params[:guess]
   @card = @guess.card
-  @user = @guess.user
+  @user = @guess.round.user
   @deck = @card.deck
 
   @round_over = round_over?
+  if @round_over
+    session[:guess_count] = 0
+  end
 
   erb :display_answer
 end
