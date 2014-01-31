@@ -14,7 +14,7 @@
 
 <p>
 <% if @round_over %>
-  <a href='<%="users/#{@user.id}"%>'>Go to your results</a>
+  <a href='<%="/users/#{@user.id}"%>'>Go to your results</a>
 <% else %>
   <a href="/round/question">Next question</a>
 <% end %>
