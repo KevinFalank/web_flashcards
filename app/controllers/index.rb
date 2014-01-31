@@ -1,4 +1,4 @@
 get '/' do
-  # Look in app/views/index.erb
+  # This is the login page
   erb :index
 end

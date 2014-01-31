@@ -1,0 +1,5 @@
+  <ul>
+    <% Deck.all.each do |deck| %>
+    <li><a href='<%="/round?deck_id=#{deck.id}"%>'><%= deck.name %></a><span clas="glyphicon glyphicon-th-large"></span></li>
+    <% end %>
+  </ul>
