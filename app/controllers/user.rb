@@ -1,6 +1,13 @@
 post '/login/' do
 #Validates username/password. Redirects to /decks if successful.
-  redirect to '/decks/'
+  # params[:login].inspect
+  user_id = User.login(params[:login])
+  if user_id > 0
+    session[:user_id] = user_id
+    redirect to '/decks/'
+  else
+    redirect "/"
+  end
 end
 
 get '/users/:user_id/' do
