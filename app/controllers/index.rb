@@ -61,3 +61,4 @@ get '/signup/error/' do
   #Where you are redirected when POST /users/create route has problem with your info.
   #Takes your info as query string so we can display it + error
 end
+
