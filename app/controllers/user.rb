@@ -37,6 +37,7 @@ end
 get '/users/logout/' do
   #Logs user out.
   #Redirects to 'login' /
+  session[:user_id] = 0
 end
 
 get '/login/error/' do
