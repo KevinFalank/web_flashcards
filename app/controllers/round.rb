@@ -30,14 +30,17 @@ post '/round/answer' do
                round_id: session[:round_id],
                correctness: correctness)
   session[:guess_count] += 1
-  redirect "/round/display_answer?guess_id=#{guess.id}"
+  redirect "/round/display_answer?guess_id=#{guess.id}&guess=#{user_guess}"
 end
 
 get '/round/display_answer' do
+  @guess = Guess.find(params[:guess_id])
+  @user_guess = params[:user_guess]
+  @card = @guess.card
+  @user = @guess.user
+  @deck = @card.deck
 
-  #Retrives your guess based on guess_id in query string.
-  #Displays your guess, the answer, and correctness.
-  #Check number of guesses made vs. max_guesses in round.
-    #If done, render with 'done' link.
-    #Else, render with 'next question' link.
+  @round_over = ()
+
+  erb :display_answer
 end
