@@ -23,12 +23,18 @@ get '/round/question' do
 end
 
 post '/round/answer' do
-  #Post logs your guess and its correctness.
-  #It then redirects to /round/display_answer/ with the guess_id stored in query string.
-
+  user_guess = params[:guess]
+  card = Card.find(session[:card_id])
+  correctness = check_guess(user_guess, card.answer)
+  guess = Guess.create(card: card,
+               round_id: session[:round_id],
+               correctness: correctness)
+  session[:guess_count] += 1
+  redirect "/round/display_answer?guess_id=#{guess.id}"
 end
 
 get '/round/display_answer' do
+
   #Retrives your guess based on guess_id in query string.
   #Displays your guess, the answer, and correctness.
   #Check number of guesses made vs. max_guesses in round.
