@@ -1,7 +1,5 @@
-<div class="container">
   <ul>
     <% @decks.each do |deck| %>
     <li><a href='<%="/round?deck_id=#{deck.id}"%>'><%= deck.name %></a></li>
     <% end %>
   </ul>
-</div>
