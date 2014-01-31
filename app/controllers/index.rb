@@ -35,16 +35,7 @@ get '/round/display_answer/'
     #Else, render with 'next question' link.
 end
 
-get '/decks/:deck_id/question/' do
 
-end
-
-get '/cards/:card_id/show_answer/' do
-  #params[:guess]
-  #Show guess and correct answer.
-  #'Next question' leads back to /decks/:deck_id/question/
-  #If last question, 'next question' link is 'see results', directs to PROFILE.
-end
 
 get '/users/:user_id/' do
 #This is the 'profile' page. Displays history of rounds played.
@@ -79,7 +70,4 @@ end
 
 
 
-get '/users/:user_id/'
-
-get '/decks/:deck_id/questions/:question_id/'
 
