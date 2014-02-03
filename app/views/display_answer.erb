@@ -1,20 +1,19 @@
-<h2><%= @user.name %></h2>
-<h2><%= @deck.name %></h2>
 
-<p>The question was: <%= @card.question %></p>
-<p>Your guess was: <%= @user_guess %> </p>
-<p>The answer is: <%= @card.answer %> </p>
-<p>Your guess was:
-    <% if @guess.correctness == 1 %>
-      RIGHT
-    <% else %>
-      WRONG
-    <% end %>
-</p>
+<h2 class="page-header"><span class="glyphicon glyphicon-folder-open"></span>&nbsp;&nbsp;&nbsp;<%= @deck.name %></h2>
 
-<p>
-<% if @round_over %>
-  <a href='<%="/users/#{@user.id}"%>'>Go to your results</a>
-<% else %>
-  <a href="/round/question">Next question</a>
-<% end %>
+<div class="jumbotron">
+  <div class="lead"><p class="text-muted"><%= @card.question %></p></div>
+  <% if @guess.correctness == 1 %>
+    <div class="alert alert-success"><p>Correct. Great job!</p> <small>You correctly responded: <b><%= @user_guess %></b>.</small></div>
+  <% else %>
+    <div class="alert alert-danger"><p>Incorrect. That's okay though, keep trying!</p><small>You incorrectly guessed <b><%= @user_guess %></b>. The correct answer is <b><%= @card.answer %></b>.</small></div>
+  <% end %>
+  <% if @round_over %>
+    <a href='<%="/users/#{@user.id}"%>' class="btn btn-warning btn-large" role="button">View Your Results</a>
+  <% else %>
+    <a href="/round/question" class="btn btn-primary btn-large" role="button">Next Question</a>
+  <% end %>
+</div>
+
+
+

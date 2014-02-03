@@ -19,33 +19,34 @@
   </head>
   <body>
     <div class="container-fluid">
-    <header class="row page-header">
-      <h1><a href="/">FlashChards</a></h1>
-    </header>
-    <nav>
-      <ul class="nav">
-        <li class="first"><a href="/"><span class="glyphicon glyphicon-home"></span></a></li>
-        <li><a href="/">Login<span class="glyphicon glyphicon-user"></span></a></li>
-        <li class="last"><a href="/">Study<span class="glyphicon glyphicon-pencil"></span></a></li>
-        </li>
-      </ul>
-    </nav>
-    <div class="row">
-      <header class="page-header"></header>
-      <%= yield %>
-    </div>
-    <footer class="footer row">
-      <div class="col-xs-12 col-sm-6 col-md-8">
-        <span class="copyright">Copyright &copy;2014. All Rights Reserved.</span>
-        <span class="authors">Ben Neuman, Brian Murphy, Lydia Koller, Kevin Falank, Tara Roys, Cristin O'Connor</span>
-      </div>
-      <div class="col-xs-6 col-md-4">
-        <img src="http://scm-l3.technorati.com/12/12/13/73853/devbootcamp.png?t=20121213131231" class="logo" alt="Dev Bootcamp" title="Dev Bootcamp">
-      </div>
-    </footer>
-  </div><!--.container-fluid-->
+      <header class="page-header">
+        <h1><a href="/">FlashChards</a><div class="small">Flashcards for Everyone</div></h1>
+      </header>
+      <nav class="navbar navbar-default" role="primary">
+        <ul>
+          <li class="first"><a href="/">Home</a></li>
+          <li class="last"><a href="/decks">Decks</a></li>
+          <li class="navbar-right navbar-text"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;<a href='<%= "/users/#{session[:user_id]}" %>' class="navbar-link"><%= session[:username] %></a></li>
+          <% if session[:user_id] %> <% else %>
+            <li class="navbar-right"><a href="/" class="btn btn-default navbar-btn">Sign In</a></li>
+          <% end %>
+        </ul>
+      </nav>
+      <div class="content row" role="main"><%= yield %></div>
+      <footer class="small">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-12 col-sm-10"><span class="copyright">Copyright   <span class="glyphicon glyphicon-copyright-mark"></span> <%= Time.now.year %>. All Rights Reserved.</span><ul class="authors list-inline"><li><a href="#">Ben Neuman</a></li><li><a href="#">Brian Murphy</a></li><li><a href="#">Lydia Koller</a></li><li><a href="#">Kevin Falank</a></li><li><a href="#">Tara Roys</a></li><li><a href="#">Cristin O'Connor</a></li></ul></div>
+            <div class="col-xs-6 col-xs-offset-3 col-sm-2 col-sm-offset-0"><img src="/css/images/devbootcamp.png" class="logo pull-right" alt="Dev Bootcamp" title="Dev Bootcamp"></div>
+          </div><!--row-->
+        </div><!--container-->
+      </footer>
+    </div><!--container-->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/bootstrap.js"></script>
   </body>
 </html>
+
+    
+   

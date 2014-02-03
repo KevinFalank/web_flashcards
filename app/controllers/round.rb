@@ -4,6 +4,8 @@ get '/round' do
   session[:guess_count] = 0
   session[:user_id] = 1 #temp
   session[:round_id] = Round.create(user_id: session[:user_id], deck_id: session[:deck_id]).id
+  session[:correct_guesses] = Guess.where(correctness: 0).count
+  session[:username] = User.find(session[:user_id]).name
   redirect '/round/question'
 end
 
@@ -26,6 +28,8 @@ post '/round/answer' do
   user_guess = params[:guess]
   card = Card.find(session[:card_id])
   correctness = check_guess(user_guess, card.answer)
+  # Added to help calculate progress bar
+
   guess = Guess.create(card: card,
                round_id: session[:round_id],
                correctness: correctness)
@@ -39,10 +43,11 @@ get '/round/display_answer' do
   @card = @guess.card
   @user = @guess.round.user
   @deck = @card.deck
-
   @round_over = round_over?
+
   if @round_over
     session[:guess_count] = 0
+    session[:correct_guesses] = 0
   end
 
   erb :display_answer

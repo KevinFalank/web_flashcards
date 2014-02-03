@@ -1,0 +1,21 @@
+.content,
+.header {margin:1.5em auto;}
+
+
+.form-horizontal .form-group {margin-left:0; margin-right:0;}
+footer .col-sm-10 {margin-left:0; width:80%;}
+.row {clear:both; margin:1.5em auto;}
+
+nav {background:#efefef; border-radius:4px;}
+nav ul {margin:0;}
+nav li {float:left; padding:0 2em; list-style:none; margin-top:15px; margin-bottom:15px;}
+nav .first {padding-left:0;}
+nav .last {padding-right:0;}
+nav li a { text-transform:uppercase; font-weight:bold;}
+
+.muted-heading {font-weight:bold;  color: #999; text-transform:uppercase; font-weight:bold; font-family:helvetica;}
+
+.question #submit {margin-left:1em;}
+
+.container-fluid {max-width:1000px;}
+

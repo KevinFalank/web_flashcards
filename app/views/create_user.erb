@@ -1,9 +1,7 @@
-<div class = 'container'>
-  <form method = 'post' action = '/users/create'></br></br>
-    Name:<input type = 'text' name= 'new_user[name]'/></br></br>
-    Email:<input type = 'text' name= 'new_user[email]'/></br></br>
-    Username: <input type = 'text' name= 'new_user[user_name]'/></br></br>
-    Password: <input type = 'password' name= 'new_user[password]'/></br></br>
-    <input type = 'submit' value = 'login'/></br></br>
+  <form method = "post" action = "/users/create" class="form-horizontal" role="form">
+    <label for="name">Name: <input type="text" name="new_user[name]" id="name"/></label>
+    <label for="email">Email: <input type="email" name="new_user[email]" id="email"/></label>
+    <label for="name">Username: <input type="text" name="new_user[user_name]" id="username"/></label>
+    <label for="name">Password: <input type="password" name="new_user[password]" id="password"/></label>
+    <input type="submit" value="Submit" id="submit" />
   </form>
-</div>

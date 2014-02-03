@@ -7,6 +7,7 @@ helpers do
     good_cards.sample
   end
 
+
   def check_guess(guess, answer)
     (guess.downcase.chomp == answer.downcase.chomp) ? 1 : 0
   end

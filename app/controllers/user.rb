@@ -10,6 +10,12 @@ post '/login' do
   end
 end
 
+get '/users/:user_id' do
+  erb :profile
+#This is the 'profile' page. Displays history of rounds played.
+end
+
+
 post '/users/create' do
   #Generates user from form input.
   #Sets user as logged in.
@@ -28,14 +34,7 @@ end
 get '/users/logout' do
   #Logs user out.
   #Redirects to 'login' /
-  # session.delete(:user_id)
-  redirect to '/'
-end
-
-get '/users/:user_id' do
-  #This is the 'profile' page. Displays history of rounds played.
-  @profile_data = User.get_rounds_by_user(current_user.id)
-  erb :profile
+  session[:user_id] = 0
 end
 
 get '/login/error' do

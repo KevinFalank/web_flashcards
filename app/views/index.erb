@@ -1,11 +1,22 @@
-<form method="post" action="/login" class="login" role="form">
-   <fieldset class="input-fields">
-     <label for="username">Username: <input type="text" name="login[user_name]" id="username" class="form-control"></label>
-     <label for="password">Password: <input type="password" name="login[password]" id="password" class="form-control"></label>
-   </fieldset>
-   <fieldset class="submit-buttons">
-     <label for="submit"><input type="submit" name="submit" id="submit" class="btn btn-primary" value="Login"/></label>
-     <a href="/users/create" class="btn btn-primary">Create Account</a>
-   </fieldset>
-</form>
+  <form method="post" action="/login" role="form" class="form-inline login">
+    <div class="form-group">
+      <label class="label sr-only" for="username">Username:</label>
+      <div class="input-group input-group-lg">
+        <input type="text" name="login[user_name]" id="username" placeholder="Enter Username" class="form-control" />
+      </div><!--input-group input-group-lg-->
+    </div><!--form-group-->
+    <div class="form-group">
+      <label class="label sr-only" for="password">Password:</label>
+      <div class="input-group input-group-lg">
+        <input type="password" name="login[password]" id="password" placeholder="Enter Password" class="form-control" />
+      </div><!--input-group-lg input-group-->
+    </div><!--form-group-->
+    <div class="form-group">
+      <label class="label sr-only" for="submit">Submit</label>
+      <input type="submit" name="submit" id="submit" class="btn btn-primary btn-lg" value="Login" />
+    </div><!--form-group-->
+    <div class="form-group">
+        <div class="row"><a href="/users/create" class="btn btn-success btn-lg">Create Account</a></div>
+    </div>
+  </form>
 
